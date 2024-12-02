@@ -1,0 +1,36 @@
+services:
+  backend-1:
+    container_name: backend-1
+    image: backend:latest
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-react
+    environment:
+      NEO4J_URI: bolt://neo4j-db:7687
+
+  frontend-1:
+    container_name: frontend-1
+    image: frontend:latest
+    build:
+      context: ../frontend
+      dockerfile: ../frontend/Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ../frontend:/app/frontend
+    command: bash -c "cd /app/frontend && \
+      npm install && \
+      npm start"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-1
+    networks:
+      - spring-react
+
+networks:
+  spring-react:
+    driver: bridge
