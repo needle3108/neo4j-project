@@ -26,7 +26,7 @@ export default function UserHistory(){
 
         formData.append('email', email);
 
-        fetch("http://localhost:8080/person/userHistory", {
+        fetch("http://64.226.116.227:8080/person/userHistory", {
             method: "POST",
             body: formData
         }).then(response => {

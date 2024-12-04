@@ -38,7 +38,7 @@ export default function Users(){
     const paginationModel = { page: 0, pageSize: 10 };
 
     useEffect(() => {
-        fetch("http://localhost:8080/person/getUsers", {
+        fetch("http://64.226.116.227:8080/person/getUsers", {
             method: "GET"
         }).then(response => {
             if(response.status === 200){

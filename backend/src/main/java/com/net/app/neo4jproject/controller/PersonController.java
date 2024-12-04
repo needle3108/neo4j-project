@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/person")
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("http://64.226.116.227:3000")
 public class PersonController {
     @Autowired
     private PersonRepository personRepository;

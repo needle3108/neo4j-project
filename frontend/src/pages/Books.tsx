@@ -18,7 +18,7 @@ export default function Books(){
     const paginationModel = { page: 0, pageSize: 10 };
 
     useEffect(() => {
-        fetch("http://localhost:8080/book/getBooks", {
+        fetch("http://64.226.116.227:8080/book/getBooks", {
             method: "GET"
         }).then(response => {
             if(response.status === 200){

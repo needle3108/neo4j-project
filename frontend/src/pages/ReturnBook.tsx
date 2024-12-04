@@ -47,7 +47,7 @@ export default function ReturnBook(){
     ];
 
     useEffect(() => {
-        fetch("http://localhost:8080/person/getUsers", {
+        fetch("http://64.226.116.227:8080/person/getUsers", {
             method: "GET"
         }).then(response => {
             if(response.status === 200){
@@ -66,7 +66,7 @@ export default function ReturnBook(){
 
             formData.append('email', selectedUser.toString());
 
-            fetch("http://localhost:8080/book/getPersonRentedBooks", {
+            fetch("http://64.226.116.227:8080/book/getPersonRentedBooks", {
                 method: "POST",
                 body: formData
             }).then(response => {
@@ -101,7 +101,7 @@ export default function ReturnBook(){
             formData.append('email', selectedUser.toString());
             formData.append('id', selectedBook.toString());
 
-            fetch("http://localhost:8080/book/returnBook", {
+            fetch("http://64.226.116.227:8080/book/returnBook", {
                 method: "POST",
                 body: formData
             }).then(async response => {

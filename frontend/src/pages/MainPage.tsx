@@ -53,7 +53,7 @@ export default function MainPage(){
             formData.append('email', email);
             formData.append('phoneNumber', phoneNumber);
 
-            fetch("http://localhost:8080/person/addUser", {
+            fetch("http://64.226.116.227:8080/person/addUser", {
                 method: "POST",
                 body: formData
             }).then(async response => {
@@ -88,7 +88,7 @@ export default function MainPage(){
             formData.append('author', author);
             formData.append('publisher', publisher);
 
-            fetch("http://localhost:8080/book/addBook", {
+            fetch("http://64.226.116.227:8080/book/addBook", {
                 method: "POST",
                 body: formData
             }).then(async response => {
